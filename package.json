@@ -1,7 +1,7 @@
 {
   "name": "expenses-chart",
   "private": true,
-  "homepage":"https://pro-grammer206.github.io/expenses_chart_react/expenses-chart",
+  "homepage":"https://pro-grammer206.github.io/expenses_chart_react/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
