@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap');
+:root {
+--soft-red:hsl(10, 79%, 65%);
+--light-soft-red:hsla(10, 79%, 65%,0.5);
+--cyan:hsl(186, 34%, 60%);
+--light-cyan:hsla(186,34%,60%,0.5);
+--dark-brown:hsl(25, 47%, 15%);
+--medium-brown:hsl(28, 10%, 53%);
+--cream:hsl(27, 66%, 92%);
+--very-pale-orange:hsl(33, 100%, 98%);
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+body{
+
+  background-color: var(--cream);
+}
+#root{
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom: 0;
+  top:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.balance{
+width: 500px;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--soft-red);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.balance__desc{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+}
+.balance__title{
+  font-size: 0.9rem;
+  font-weight:100;
+}
+.balance__logo{
+  width: 90px;
+  height: auto;
+}
+.balance__amount{
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+.bar{
+  width: 3rem;
+  background-color: var(--soft-red);
+  border-radius: 5px;
+  
+  animation: appear 0.5s ease-out;
+
+}
+.bar:hover{
+  background-color: var(--light-soft-red);
+}
+@keyframes appear {
+  from{
+    transform: scale(0.2) translateX(100vw);
+    opacity:0.2;
+  }
+}
+@keyframes popup{
+  from{
+    transform: scale(0.2);
+    opacity: 0.3;
+  }
+}
+
+.graph__tile{
+  background-color: var(--very-pale-orange);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 500px;
+ 
+}
+.day{
+  margin-top: 1rem;
+  display: flex;
+  gap:1rem;
+}
+.graph__plot{
+  display: flex;
+  height: 270px;
+  gap: 1rem;
+  justify-content: center;
+
+}
+
+.partition{
+  color: var(--cream);
+  border: 2px solid var(--cream);
+}
+.summary{
+  background-color: var(--very-pale-orange);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.summary__left h3{
+  color:var(--medium-brown);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.totalAmt{
+  font-size: 3rem;
+  font-weight: bold;
+  transition: font-size 0.2s;
+}
+.graph__diagram{
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+}
+.maxDay{
+  background-color: var(--cyan);
+}
+.maxDay:hover{
+  background-color: var(--light-cyan);
+}
+.percent{
+color: var(--dark-brown);
+}
+.summary__right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 300;
+  color: var(--medium-brown);
+}
+.toast{
+  position: absolute;
+  background-color: var(--dark-brown);
+  color: var(--cream);
+  font-weight: 800;
+  border-radius: 10px;
+  top:0px;
+  padding: 0.5rem;
+animation:popup 0.2s ease-out;
+}
+
+@media (max-width:900px){
+    .balance{
+      width: 360px;
+    }
+    .graph__tile{
+      width: 360px;
+    }
+    .bar{
+      width: 30px;
+    }
+    .totalAmt{
+      font-size: 2rem;
+    }
+}
